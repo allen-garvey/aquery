@@ -7,6 +7,13 @@ Lightweight, stripped-down version of jQuery. Shares the same interface, so you 
 * Compatible with IE10 or later - requires `document.querySelectorAll` and `element.classList`
 * npm / gulp to create custom build
 
+## Building
+
+* `cd` into project folder
+* Type `sudo npm install` to install dependencies
+* Type `sudo npm install gulp -g` if you have not already install gulp globally
+* Type `gulp build` to build project
+
 ## Caveats
 
 * hide/show will delete any inline display styles you have added and show simply sets element to display block
