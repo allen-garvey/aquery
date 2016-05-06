@@ -14,7 +14,7 @@ config.js.DIST_NAME = 'aquery'; //name of compiled file to be served i.e. app.js
 config.js.core_files = ['core_start', 'core_end'];
 
 //modules
-config.js.app_files = ['data', 'css_base', 'transitions_basic', 'events'];
+config.js.app_files = ['attributes', 'css_base', 'transitions_basic', 'events'];
 
 //add core
 config.js.app_files.unshift(config.js.core_files[0]);
