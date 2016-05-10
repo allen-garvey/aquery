@@ -32,6 +32,11 @@ aQueryObject.prototype.html = function(newValue){
 	return this.attr('innerHTML', newValue);
 }
 
+//convenience function for aQueryObject.attr('innerHTML', newValue)
+aQueryObject.prototype.text = function(newValue){
+	return this.attr('textContent', newValue);
+}
+
 aQueryObject.prototype.data = function(key){
 	if(this.length < 1){
 		return '';
