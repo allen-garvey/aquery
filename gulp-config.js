@@ -14,11 +14,12 @@ config.js.DIST_NAME = 'aquery'; //name of compiled file to be served i.e. app.js
 config.js.core_files = ['core_start', 'core_end'];
 
 //modules
-config.js.app_files = ['attributes', 'css_base', 'transitions_basic', 'events'];
+config.js.app_files = ['attributes', 'dom_manipulation', 'css_base', 'transitions_basic', 'events'];
 
 //add core
 config.js.app_files.unshift(config.js.core_files[0]);
 config.js.app_files.push(config.js.core_files[1]);
+config.js.app_files.push('static_methods');
 
 //add source dir prefix and .js suffix to js source files
 config.js.app_files = config.js.app_files.map(function(file){return config.js.SOURCE_DIR + 'aquery.' + file + '.js';});
