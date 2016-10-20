@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>aQuery Test Template</title>
+        <meta name="description" content="Test of aQuery templates"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+    	<div id="container"></div>
+		<script src='../dist/aquery.js'></script>
+        <script type="text/template" id="template_outer">
+            <h1>{{ heading }}</h1>
+            <h2>{{listHeading}}</h2>
+            <ul>
+                {{{listItems}}}
+            </ul>
+        </script>
+        <script type="text/template" id="template_inner">
+            <li>{{item1}}</li>
+            <li>{{ item2 }}</li>
+        </script>
+		<script>
+			/*
+			 * 
+			 */
+			(function($){
+                var templateOuter = $.template($('#template_outer').html());
+                var templateInner = $.template($('#template_inner').html());
+                var compiled = templateOuter.render({
+                    heading: 'Template Test',
+                    listHeading: 'Grocery Items',
+                    listItems: templateInner.render({item1: 'milk', item2: 'bread'})
+                });
+                $('#container').html(compiled);
+			})(aQuery);
+		</script>
+    </body>
+</html>
