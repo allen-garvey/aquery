@@ -2,8 +2,6 @@
 
 var config = {};
 
-
-
 /*
 * JavaScript configuration
 */
@@ -17,17 +15,15 @@ config.js.core_files = ['core_start', 'core_end'];
 config.js.app_files = ['attributes', 'dom_manipulation', 'css_base', 'transitions_basic', 'events'];
 
 //static method modules
-config.js.static_files = ['static_dom'];
+config.js.static_files = ['dom', 'template'].map(function(filename){ return 'static.' + filename; });
 
 //add core
 config.js.app_files.unshift(config.js.core_files[0]);
 config.js.app_files.push(config.js.core_files[1]);
-config.js.app_files.concat(config.js.static_files);
+config.js.app_files = config.js.app_files.concat(config.js.static_files);
 
 //add source dir prefix and .js suffix to js source files
 config.js.app_files = config.js.app_files.map(function(file){return config.js.SOURCE_DIR + 'aquery.' + file + '.js';});
-
-
 
 
 /*
