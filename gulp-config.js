@@ -15,7 +15,7 @@ config.js.core_files = ['core_start', 'core_end'];
 config.js.app_files = ['attributes', 'dom_manipulation', 'css_base', 'transitions_basic', 'events'];
 
 //static method modules
-config.js.static_files = ['dom', 'template'].map(function(filename){ return 'static.' + filename; });
+config.js.static_files = ['dom', 'template', 'ajax'].map(function(filename){ return 'static.' + filename; });
 
 //add core
 config.js.app_files.unshift(config.js.core_files[0]);
