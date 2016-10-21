@@ -19,3 +19,5 @@ Thumbs.db
 *.woff
 *.zip
 dist/*
+tests/*.js
+tests/*.js.map
