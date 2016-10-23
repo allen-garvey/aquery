@@ -26,6 +26,6 @@ function aQuery(selector){
 	//callback - index, element
 	aQueryObject.prototype.each = function(func){
 		for (var i = 0; i < this.length; i++) {
-			func(i, this.elementList[i]);
+			func.call(this.elementList[i], i, this.elementList[i]);
 		}
 	}
