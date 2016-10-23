@@ -8,12 +8,13 @@
     </head>
     <body>
     	<ul>
-    		<li><button>Click me</button></li>
+    		<li><div>Some text</div><button>Click me</button></li>
     		<li><button>Click me</button></li>
     		<li><button>Click me</button></li>
     		<li><button>Click me</button></li>
     		<li><button>Click me</button></li>
     	</ul>
+        <button id="direct">Direct Event</button>
 		<script src='../dist/aquery.js'></script>
 		<script>
 			/*
@@ -22,8 +23,13 @@
 			(function($){
 			    $('ul').on('click', 'li button', function(event) {
 			    	event.preventDefault();
+                    console.log(this);
 			    	console.log('button clicked');
 			    });
+                $('#direct').on('click', function(event) {
+                    event.preventDefault();
+                    console.log(this);
+                });
 			})(aQuery);
 		</script>
     </body>
