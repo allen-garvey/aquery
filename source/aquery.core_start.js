@@ -29,3 +29,12 @@ function aQuery(selector){
 			func.call(this.elementList[i], i, this.elementList[i]);
 		}
 	}
+
+	aQueryObject.prototype.first = function(){
+		//if empty, just return same empty object
+		//since all empty objects are functionally identical
+		if(this.length === 0){
+			return this;
+		}
+		return this.elementList[0];
+	}
