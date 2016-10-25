@@ -12,7 +12,7 @@ config.js.DIST_NAME = 'aquery'; //name of compiled file to be served i.e. app.js
 config.js.core_files = ['core_start', 'core_end'];
 
 //modules
-config.js.app_files = ['attributes', 'dom_manipulation', 'css_base', 'transitions_basic', 'events'];
+config.js.app_files = ['attributes', 'selection', 'dom_manipulation', 'css_base', 'transitions_basic', 'events'];
 
 //static method modules
 config.js.static_files = ['dom', 'template', 'ajax'].map(function(filename){ return 'static.' + filename; });
