@@ -19,6 +19,7 @@ config.js.static_files = ['dom', 'template', 'ajax'].map(function(filename){ ret
 
 //add core
 config.js.app_files.unshift(config.js.core_files[0]);
+config.js.app_files.unshift('polyfills');
 config.js.app_files.push(config.js.core_files[1]);
 config.js.app_files = config.js.app_files.concat(config.js.static_files);
 
