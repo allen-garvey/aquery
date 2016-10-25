@@ -36,5 +36,5 @@ function aQuery(selector){
 		if(this.length === 0){
 			return this;
 		}
-		return this.elementList[0];
+		return new aQueryObject(this.elementList[0]);
 	}
