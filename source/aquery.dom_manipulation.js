@@ -16,3 +16,9 @@ aQueryObject.prototype.after = function(content){
 	});
 };
 
+aQueryObject.prototype.append = function(content){
+	this.each(function(i, element){
+		element.appendChild(content);
+	});
+};
+
