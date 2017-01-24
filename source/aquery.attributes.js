@@ -6,19 +6,16 @@
 //otherwise returns the value of that attribute for the first element
 //in the collection
 aQueryObject.prototype.attr = function(attributeName, newValue){
-	var setVal = typeof newValue === 'string' ? true : false;
-
-	var ret = setVal ? this : '';
-
 	if(this.length > 0){
-		if(setVal && typeof this.elementList[0][attributeName] !== undefined){
-			this.elementList[0][attributeName] = newValue;
+		if(typeof newValue === 'string'){
+			this.elementList[0].setAttribute(attributeName, newValue);
+			return this;
 		}
 		else{
-			ret = this.elementList[0][attributeName];
+			return this.elementList[0].getAttribute(attributeName);
 		}
 	}
-	return ret;
+	return this;
 }
 
 
