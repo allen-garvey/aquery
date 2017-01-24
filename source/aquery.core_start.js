@@ -30,6 +30,15 @@ function aQuery(selector){
 		}
 	}
 
+	//callback - element, index
+	aQueryObject.prototype.map = function(func){
+		var ret = [];
+		for (var i = 0; i < this.length; i++) {
+			ret.push(func.call(this.elementList[i], this.elementList[i], i));
+		}
+		return ret;
+	}
+
 	aQueryObject.prototype.first = function(){
 		//if empty, just return same empty object
 		//since all empty objects are functionally identical
