@@ -29,3 +29,13 @@ aQueryObject.prototype.closest = function(selector){
 	//not found
 	return new aQueryObject([]);
 };
+
+aQueryObject.prototype.find = function(selector){
+	//if empty, just return same empty object
+	//since empty objects have no parents
+	if(this.length === 0){
+		return this;
+	}
+	var element = this.first().elementList[0];
+	return new aQueryObject(element.querySelectorAll(selector));
+}
