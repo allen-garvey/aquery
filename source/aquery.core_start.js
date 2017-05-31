@@ -19,6 +19,12 @@ function aQuery(selector){
 			this.elementList = selector;
 		}
 		this.length = this.elementList.length >= 0 ? this.elementList.length : 1;
+		
+		//so that elements in the can be accessed by index on the object
+		var self = this;
+		Array.prototype.forEach.call(this.elementList, function(element, index){
+			self[index] = element;
+		});
 	}
 	/*
 	* General utility methods
