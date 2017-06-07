@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>aQuery Test of Show/Hide</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style>
+        	body{
+        		font-family: sans-serif;
+        	}
+        	.hidden{
+        		display: none;
+        	}
+        	.flex{
+        		display: flex;
+        		justify-content: center;
+        		align-items: center;
+        		height: 400px;
+        		background-color: blue;
+        		color: white;
+        		margin: 20px 0;
+
+        	}
+        </style>
+    </head>
+    <body>
+		<div class="hidden">This is hidden on page load</div>
+		
+		<div class="flex">
+			This text should be centered
+		</div>
+
+		<div class="flex" style="display: none;">
+			This text should be centered and is hidden on page load
+		</div>
+
+		<div class="should_be_hidden" style="display: block;">This should now be hidden</div>
+
+		<script src='../dist/aquery.js'></script>
+		<script>
+			/*
+			 * 
+			 */
+			(function($){
+			    $('.hidden').show();
+			    $('.flex').show();
+			    $('.should_be_hidden').hide();
+			})(aQuery);
+		</script>
+    </body>
+</html>
