@@ -16,7 +16,7 @@ Lightweight, stripped-down version of jQuery. Shares the same interface, so you 
 
 ## Caveats
 
-* hide/show will delete any inline display styles you have added and show simply sets element to display block
+* `show()` will default the element to `display: block` if the element is still set to `display: none` after removing any inline `display: none` styles
 
 ## License
 

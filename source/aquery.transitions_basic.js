@@ -6,13 +6,22 @@
 
 aQueryObject.prototype.hide = function(){
 	this.each(function(i, element){
-		element.style.display = 'none';
+		element.style.display = 'none';	
 	});
 	return this;
 };
 aQueryObject.prototype.show = function(){
 	this.each(function(i, element){
-		element.style.display = 'block';
+		//first remove inline display none if any
+		if(element.style.display === 'none'){
+			element.style.display = null;
+		}
+		//then see if element is now displayed
+		var cssDisplayProperty = getComputedStyle(element).getPropertyValue('display');
+		//if it's still hidden, default to display block
+		if(cssDisplayProperty === 'none'){
+			element.style.display = 'block';
+		}
 	});
 	return this;
 };
