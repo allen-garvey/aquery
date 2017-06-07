@@ -27,7 +27,7 @@ gulp.task('minifyScripts', ['concatScripts'], function(){
 /*
 * Watch tasks
 */
-gulp.task('watchScripts', function(){
+gulp.task('watchScripts', ['minifyScripts'], function(){
 	gulp.watch(config.js.SOURCE_DIR + '**/*.js', ['minifyScripts']);
 });
 
