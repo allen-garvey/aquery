@@ -14,7 +14,7 @@ aQueryObject.prototype.show = function(){
 	this.each(function(i, element){
 		//first remove inline display none if any
 		if(element.style.display === 'none'){
-			element.style.display = null;
+			element.style.removeProperty('display');
 		}
 		//then see if element is now displayed
 		var cssDisplayProperty = getComputedStyle(element).getPropertyValue('display');
